@@ -11,6 +11,7 @@ public class operacao {
         locadora.adicionarFilme("O Hobbit", "Aventura", true);
         locadora.adicionarFilme("Senhor dos Aneís", "Aventura", true);
         locadora.adicionarDvd("Sick!!!", "Machine girl", true);
+        locadora.adicionarDvd("Drukqs", "Aphex twin", true);
 
         locadora.listarFilmes();
         locadora.listarDvds();
@@ -18,6 +19,7 @@ public class operacao {
         locadora.alugarDvdPorNome("Sick!!!");
         locadora.alugarDvdPorNome("Sick!!!");
         locadora.alugarDvdPorNome("Sick!!!");
+        locadora.alugarDvdPorNome("Drukqs");
         locadora.listarMaisAlugados();
     }
 
