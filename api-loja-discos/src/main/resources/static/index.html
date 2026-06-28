@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>disco</title>
+
+
+</head>
+<body>
+
+
+    <button id="fetchBtn">Fetch data</button>
+    <div id="result"></div>
+
+
+
+        <script>
+            const button = document.getElementById("fetchBtn");
+            button.addEventListener("click", async () => {
+            const endpoint = "http://localhost:8080/users/signup"
+
+
+                try {
+                    const response = await fetch(endpoint);
+
+                    if (!response.ok) {
+                        throw new Error("Network response error")
+                    }
+
+                    const data = await response.json();
+                     document.getElementById('result').innerText = JSON.stringify(data);
+
+                } catch(error) {
+                    console.log("Error", error);
+                }
+
+            });
+
+
+        </script>
+
+</body>
+</html>

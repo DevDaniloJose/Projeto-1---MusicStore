@@ -1,0 +1,11 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:tc:mysql:8.4:///testdb
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+
+jwt:
+  secret: fC2oQ1gPoNQ1Soqgsyb3718ROVf+Pf8YGZb1K9K9ZKY=
+  expiration: 3600000
+  refreshExpirationMs: 86400000

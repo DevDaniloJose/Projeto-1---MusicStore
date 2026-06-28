@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d4f36b56-1158-4cfb-affe-9e152dbe383f" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Exception" />
+        <option value="JUnit5 Test Class" />
+        <option value="Enum" />
+        <option value="Record" />
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/ms-21.0.9/lib/src.zip!/java.base/java/util/Date.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/ms-21.0.9/lib/src.zip!/java.base/java/util/UUID.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt-api/0.13.0/jjwt-api-0.13.0.jar!/io/jsonwebtoken/JwtParser.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt-api/0.13.0/jjwt-api-0.13.0.jar!/io/jsonwebtoken/Jwts.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt-api/0.13.0/jjwt-api-0.13.0.jar!/io/jsonwebtoken/security/Keys.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/10.1.40/tomcat-embed-core-10.1.40.jar!/jakarta/servlet/FilterChain.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/10.1.40/tomcat-embed-core-10.1.40.jar!/jakarta/servlet/http/HttpServletRequest.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/10.1.40/tomcat-embed-core-10.1.40.jar!/jakarta/servlet/http/HttpServletResponse.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/3.4.5/spring-data-commons-3.4.5.jar!/org/springframework/data/repository/CrudRepository.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/6.4.5/spring-security-core-6.4.5.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/6.4.5/spring-security-core-6.4.5.jar!/org/springframework/security/core/context/SecurityContext.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/6.4.5/spring-security-core-6.4.5.jar!/org/springframework/security/core/context/SecurityContextHolder.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/6.4.5/spring-security-core-6.4.5.jar!/org/springframework/security/core/userdetails/UserDetails.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/6.4.5/spring-security-web-6.4.5.jar!/org/springframework/security/web/SecurityFilterChain.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/6.4.5/spring-security-web-6.4.5.jar!/org/springframework/security/web/authentication/WebAuthenticationDetailsSource.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/6.2.6/spring-web-6.2.6.jar!/org/springframework/web/filter/OncePerRequestFilter.class" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="3AnrSBDVP49vVjUmbknvDerWA40" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Hehe.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MusicApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SpringClient.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.Tesyter.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.ex3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ex4.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ex5.executor&quot;: &quot;Run&quot;,
+    &quot;Application.testeSenai.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.ArtistControllerIT.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArtistControllerIT.list_ReturnsListOfArtistInsidePageObjet_WhenSuccessful.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArtistControllerIT.save_ShouldSaveAnArtist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArtistControllerIT.shouldReturnAnArtist_WhenPassedId.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ArtistControllerIT.update_UpdatesAllArtistFields_WhenSuccessful.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ArtistControllerTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ArtistControllerTest.list_ReturnsListOfArtistInsidePageObjet_WhenSuccessful.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ArtistServiceTest.delete_RemovesArtist_WhenNoAlbumsExists.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArtistServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArtistServiceTest.shouldReplaceAnArtist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArtistServiceTest.shouldSaveArtist_IfDataIsValid.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MusicApiApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/disco/api-loja-discos/api-loja-discos&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.43563217&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\disco\api-loja-discos\api-loja-discos" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\disco\api-loja-discos\api-loja-discos\src\test" />
+      <recent name="D:\disco\api-loja-discos\api-loja-discos\src\main\java" />
+      <recent name="D:\disco\api-loja-discos\api-loja-discos\src\main" />
+      <recent name="D:\disco\api-loja-discos\api-loja-discos\src" />
+      <recent name="D:\disco\api-loja-discos\api-loja-discos\target" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.musicStore.api_loja_discos.controller" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.musicStore.api_loja_discos.controller" />
+      <recent name="com.musicStore.api_loja_discos.service" />
+      <recent name="com.musicStore.api_loja_discos.repository" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.musicStore.api_loja_discos.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MusicApiApplication">
+    <configuration name="MusicApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.musicStore.api_loja_discos.MusicApiApplication" />
+      <module name="api-loja-discos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.musicStore.api_loja_discos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ex3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercicio.ex3" />
+      <module name="api-loja-discos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exercicio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testeSenai" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercicio.testeSenai" />
+      <module name="api-loja-discos" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MusicApiApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api-loja-discos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.musicStore.api_loja_discos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.musicStore.api_loja_discos" />
+      <option name="MAIN_CLASS_NAME" value="com.musicStore.api_loja_discos.MusicApiApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api-loja-discos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.musicStore.api_loja_discos.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.musicStore.api_loja_discos.service" />
+      <option name="MAIN_CLASS_NAME" value="com.musicStore.api_loja_discos.service.UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MusicApiApplication" />
+      <item itemvalue="Application.ex3" />
+      <item itemvalue="Application.testeSenai" />
+      <item itemvalue="JUnit.MusicApiApplicationTests" />
+      <item itemvalue="JUnit.UserServiceTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MusicApiApplication" />
+        <item itemvalue="Application.ex3" />
+        <item itemvalue="Application.testeSenai" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.MusicApiApplicationTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d4f36b56-1158-4cfb-affe-9e152dbe383f" name="Changes" comment="" />
+      <created>1773239176085</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1773239176085</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
+          <option name="timeStamp" value="7" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.web.client.HttpClientErrorException$BadRequest" package="org.springframework.web.client" />
+          <option name="timeStamp" value="9" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLIntegrityConstraintViolationException" package="java.sql" />
+          <option name="timeStamp" value="16" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/controller/ArtistControllerTest.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/mapper/ArtistMapper.java</url>
+          <line>20</line>
+          <properties class="com.musicStore.api_loja_discos.mapper.ArtistMapper">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/api_loja_discos$MusicApiApplication.ic" NAME="MusicApiApplication Coverage Results" MODIFIED="1774273436403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.musicStore.api_loja_discos.*</FILTER>
+    </SUITE>
+  </component>
+</project>
