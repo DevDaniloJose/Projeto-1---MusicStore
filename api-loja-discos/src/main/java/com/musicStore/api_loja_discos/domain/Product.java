@@ -21,7 +21,7 @@ public class Product {
     private String name;
     private BigDecimal price;
     private int stock;
-    private ProductType type;
+    private ProductType productType;
 
         @ManyToOne
         @JoinColumn(name = "artist_id")

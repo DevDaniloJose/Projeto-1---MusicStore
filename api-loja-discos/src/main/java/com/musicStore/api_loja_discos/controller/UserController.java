@@ -33,8 +33,7 @@ public class UserController {
 
     @PostMapping("signup/artist")
     public ResponseEntity<ArtistDTO> registerArtist(@RequestBody @Valid ArtistSignUpRequest user) {
-        ArtistDTO response = artistService.save(user);
-        artistService.signUpArtist(user);
+        ArtistDTO response = artistService.signUpArtist(user);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 

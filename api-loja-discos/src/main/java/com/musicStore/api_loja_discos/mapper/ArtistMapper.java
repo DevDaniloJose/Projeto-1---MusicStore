@@ -9,6 +9,8 @@ import com.musicStore.api_loja_discos.requests.ArtistSignUpRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public abstract class ArtistMapper {
 
@@ -22,6 +24,7 @@ public abstract class ArtistMapper {
 
     public abstract Artist toArtist(ArtistDTO artistDTO);
 
-
     public abstract Artist toArtist(ArtistSignUpRequest artistPostRequestBody);
+
+    public abstract List<ArtistDTO> toArtistDTOList(List<Artist> artistList);
 }

@@ -5,6 +5,7 @@ import com.musicStore.api_loja_discos.Enum.Role;
 import com.musicStore.api_loja_discos.domain.User;
 import com.musicStore.api_loja_discos.exceptions.BadRequestException;
 import com.musicStore.api_loja_discos.mapper.AlbumMapper;
+import com.musicStore.api_loja_discos.mapper.UserMapper;
 import com.musicStore.api_loja_discos.repository.AlbumRepository;
 import com.musicStore.api_loja_discos.repository.ArtistRepository;
 import com.musicStore.api_loja_discos.repository.UserRepository;
@@ -78,14 +79,18 @@ public class UserService implements UserDetailsService {
         target.setRole(Role.ADMIN);
         com.musicStore.api_loja_discos.domain.User save = userRepository.save(target);
 
+
+
         return new SignUpResponse(save.getUsername(), save.getId(), null);
     }
 
-  //public List<Album> toFavoriteAnAlbum() {
+    public UserDTO findByUsername(String username) {
+         return userRepository.findByUsername(username).map(UserMapper::toUserDTO).orElseThrow(() -> new BadRequestException("Promoter not found"));
+    }
 
-  //}
 
-    private boolean isAdmin(long id) {
+
+    public boolean isAdmin(long id) {
         com.musicStore.api_loja_discos.domain.User user = userRepository.findById(id).orElseThrow(() -> new BadRequestException("User not found"));
 
         if (!user.getRole().equals(Role.ADMIN)) {
@@ -102,6 +107,7 @@ public class UserService implements UserDetailsService {
 
         List<Album> favoriteAlbums = user.getFavoriteAlbums();
       favoriteAlbums.add(album);
+      userRepository.save(user);
       return favoriteAlbums;
     }
 

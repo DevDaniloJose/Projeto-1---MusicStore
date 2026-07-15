@@ -16,7 +16,9 @@ public class ArtistPostRequestBody {
 
     @NotBlank
     @Pattern(regexp = "[a-zA-Z\\s]+", message = "Artist name must not contain numbers")
-    private String name;
+    private String username;
+    private String stageName;
+
     @NotBlank(message = "Genre is mandatory")
     private String genre;
 

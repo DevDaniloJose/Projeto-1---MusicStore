@@ -41,7 +41,7 @@ public class RefreshTokenService {
                 return refreshTokenRepository.save(refreshToken);
             } else {
                 var token = new RefreshToken();
-                token.setUser(userRepository.findById(userId).get());
+                token.setUser(userRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException("User not found")));
                 token.setExpiryDate(Instant.now().plusMillis(refreshTokenDurationMs));
                 token.setToken(UUID.randomUUID().toString());
                 token.setDevice(device);

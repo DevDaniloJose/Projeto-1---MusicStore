@@ -8,6 +8,7 @@ import com.musicStore.api_loja_discos.repository.UserRepository;
 import com.musicStore.api_loja_discos.requests.AuthRequest;
 import com.musicStore.api_loja_discos.requests.AuthResponse;
 import com.musicStore.api_loja_discos.requests.LoginDTO;
+import com.musicStore.api_loja_discos.requests.RefreshTokenRequest;
 import com.musicStore.api_loja_discos.service.JWTService;
 import com.musicStore.api_loja_discos.service.RefreshTokenService;
 import jakarta.validation.Valid;
@@ -34,14 +35,12 @@ public class AuthController {
         private final RefreshTokenService refreshTokenService;
         private final JWTService jwtService;
         private final UserDetailsService userDetailsService;
-        @Autowired
         private  AuthenticationManager authenticationManager;
-    @Autowired
     private UserRepository userRepository;
 
     @Valid
     @PostMapping("/login")
-        public ResponseEntity<?> login(@RequestBody AuthRequest authRequest, @RequestHeader("User-Agent") String userAgent) {
+            public ResponseEntity<?> login(@RequestBody AuthRequest authRequest, @RequestHeader("User-Agent") String userAgent) {
             try {
                 authenticationManager.authenticate(
                         new UsernamePasswordAuthenticationToken(
@@ -75,8 +74,8 @@ public class AuthController {
 
 
             @PostMapping("/refresh")
-    public ResponseEntity<?> refreshToken(@RequestBody Map<String, String> payload) {
-        String requestToken = payload.get("refreshToken");
+    public ResponseEntity<?> refreshToken(@RequestBody RefreshTokenRequest payload) {
+        String requestToken = payload.refreshToken();
 
         if (requestToken == null) {
             return ResponseEntity.badRequest().body("Refresh token is required");

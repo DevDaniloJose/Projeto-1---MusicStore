@@ -1,12 +1,16 @@
 package com.musicStore.api_loja_discos.integration;
 
+import com.musicStore.api_loja_discos.Enum.Role;
+import com.musicStore.api_loja_discos.domain.Album;
+import com.musicStore.api_loja_discos.domain.Artist;
 import com.musicStore.api_loja_discos.domain.User;
+import com.musicStore.api_loja_discos.repository.AlbumRepository;
 import com.musicStore.api_loja_discos.repository.UserRepository;
-import com.musicStore.api_loja_discos.requests.AuthRequest;
-import com.musicStore.api_loja_discos.requests.AuthResponse;
-import com.musicStore.api_loja_discos.requests.SignUpRequest;
-import com.musicStore.api_loja_discos.requests.SignUpResponse;
+import com.musicStore.api_loja_discos.requests.*;
 import com.musicStore.api_loja_discos.service.UserService;
+import com.musicStore.api_loja_discos.util.AlbumCreator;
+import com.musicStore.api_loja_discos.util.ArtistCreator;
+import com.musicStore.api_loja_discos.util.UserCreator;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -17,6 +21,8 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -36,9 +42,12 @@ public class UserControllerIT {
     private TestRestTemplate testRestTemplate;
 
 
+
     private static final String USERNAME = "username";
     private static final String PASSWORD = "password123";
     private static final String ADMIN_USERNAME = "dan";
+    @Autowired
+    private AlbumRepository albumRepository;
 
     @BeforeEach
     void setUp() {
@@ -47,13 +56,13 @@ public class UserControllerIT {
         userRepository.save(User.builder()
                 .username(USERNAME)
                 .password(PASSWORD)
-                .role("USER")
+                .role(Role.USER)
                 .build());
 
         userRepository.save(User.builder()
                 .username(ADMIN_USERNAME)
                 .password(PASSWORD)
-                        .role("ADMIN")
+                        .role(Role.ADMIN)
                 .build());
     }
 
@@ -87,6 +96,16 @@ public class UserControllerIT {
         ResponseEntity<Void> response = testRestTemplate.postForEntity("/users/signup", request, Void.class);
 
         Assertions.assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+    }
+
+    @Test
+    @DisplayName("Signing up as an artist")
+    void signingUpAsAnArtist() {
+        ArtistSignUpRequest artist = ArtistCreator.createArtistPostRequestBody();
+
+        ResponseEntity<ArtistDTO> response = testRestTemplate.postForEntity("/users/signup/artist", artist, ArtistDTO.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
     }
 
     @Test
@@ -133,7 +152,38 @@ public class UserControllerIT {
         ResponseEntity<Void> response = testRestTemplate.exchange("/users/promote/{id}", HttpMethod.POST, requestEntity, Void.class, targetUserId);
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+    }
 
+    @Test
+    @DisplayName("should return a list of favorite albums from the user")
+    void shouldReturnListOfFavoriteAlbums_FromUser() {
+
+        ArtistDTO artist = ArtistCreator.createArtistDTO();
+        AlbumDTO album = AlbumCreator.createAlbumDTO(artist);
+
+
+
+        Long userId = 1L;
+        ResponseEntity<AlbumDTO[]> response = testRestTemplate.getForEntity("/users/" + userId + "/showFavoriteAlbums", AlbumDTO[].class);
+
+    assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+    assertThat(response.getBody()).isNotNull();
+
+        List<AlbumDTO> returnedList = List.of(response.getBody());
+
+        assertThat(returnedList).isNotEmpty();
+        assertThat(returnedList.getFirst().getTitle()).isEqualTo(album.getTitle());
+    }
+
+    @Test
+    @DisplayName("should show userInfo")
+    void shouldShowUserInfo() {
+        User userEntity = UserCreator.createUserEntity();
+        userRepository.save(userEntity);
+        ResponseEntity<UserDTO> response = testRestTemplate.getForEntity("/users" + userEntity.getId() + "/showUserInfo", UserDTO.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotNull();
     }
 
 

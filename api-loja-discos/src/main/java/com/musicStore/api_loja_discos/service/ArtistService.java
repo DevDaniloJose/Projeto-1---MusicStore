@@ -37,7 +37,8 @@ public class ArtistService {
     }
 
     public ArtistDTO findArtistById(Long id) {
-        return artistRepository.findById(id).map(artistMapper::toArtistDTO).orElseThrow(() -> new BadRequestException("Artist not found"));
+        //.map(artistMapper::toArtistDTO).orElseThrow(() -> new BadRequestException("Artist not found"));
+      return artistRepository.findById(id).map(artistMapper::toArtistDTO).orElseThrow(() -> new BadRequestException("Artist not found"));
 
     }
 
@@ -80,12 +81,17 @@ public class ArtistService {
 
     }
 
-    public List<ArtistDTO> filterByGenre(String genre) {
+    public List<Artist> filterByGenre(String genre) {
         return artistRepository.findByGenreIgnoreCase(genre);
     }
 
     public List<ArtistDTO> findByStageName(String stageName) {
-       return artistRepository.findByStageNameContainingIgnoreCase(stageName);
+
+        List<Artist> artists = artistRepository.findByStageNameContainingIgnoreCase(stageName).orElseThrow(() -> new ResourceNotFoundException("no Artist found in db with that name"));
+
+        return artistMapper.toArtistDTOList(artists);
+
+
     }
 
 // public List<ArtistDTO> findByFilters(Integer duration, Integer year) {

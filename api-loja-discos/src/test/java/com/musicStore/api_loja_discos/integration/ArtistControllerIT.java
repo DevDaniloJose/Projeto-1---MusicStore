@@ -8,9 +8,7 @@ import com.musicStore.api_loja_discos.exceptions.BadRequestException;
 import com.musicStore.api_loja_discos.mapper.ArtistMapper;
 import com.musicStore.api_loja_discos.repository.AlbumRepository;
 import com.musicStore.api_loja_discos.repository.ArtistRepository;
-import com.musicStore.api_loja_discos.requests.ArtistDTO;
-import com.musicStore.api_loja_discos.requests.ArtistPostRequestBody;
-import com.musicStore.api_loja_discos.requests.ArtistPutRequestBody;
+import com.musicStore.api_loja_discos.requests.*;
 import com.musicStore.api_loja_discos.service.ArtistService;
 import com.musicStore.api_loja_discos.util.AlbumCreator;
 import com.musicStore.api_loja_discos.util.ArtistCreator;
@@ -39,6 +37,8 @@ import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
+import java.util.List;
+
 import static org.mockito.ArgumentMatchers.any;
 
 @Testcontainers
@@ -64,12 +64,41 @@ public class ArtistControllerIT {
 
     @Autowired
     private AlbumRepository albumRepository;
+    private ArtistService artistService;
 
 
     @BeforeEach
     void setUp() {
         albumRepository.deleteAll();
         artistRepository.deleteAll();
+    }
+
+    @Test
+    @DisplayName("should find artist by stage name")
+    void findArtistByStageName() {
+        Artist saved = artistRepository.save(ArtistCreator.createArtistToBeSaved());
+        List<ArtistDTO> responseBody = testRestTemplate.exchange("/artists/find?stageName=", HttpMethod.GET, null, new ParameterizedTypeReference<List<ArtistDTO>>() {
+        }).getBody();
+
+        Assertions.assertNotNull(responseBody);
+        Assertions.assertFalse(responseBody.isEmpty());
+        Assertions.assertEquals(saved.getStageName(), responseBody.getFirst().getStageName());
+    }
+
+
+
+    @Test
+    @DisplayName("should return a list of albums of an artist")
+    void shouldReturnAListOFTheArtistAlbums() {
+        Artist saved = artistRepository.save(ArtistCreator.createArtistToBeSaved());
+
+        albumRepository.save(AlbumCreator.createAlbumToBeSaved(saved));
+
+        List<AlbumDTO> responseBody = testRestTemplate.exchange("/artists/{id}/albums", HttpMethod.GET, null, new ParameterizedTypeReference<List<AlbumDTO>>() {
+        }, saved.getId()).getBody();
+
+        Assertions.assertNotNull(responseBody);
+        Assertions.assertFalse(responseBody.isEmpty());
     }
 
     @Test
@@ -83,7 +112,7 @@ public class ArtistControllerIT {
 
         org.assertj.core.api.Assertions.assertThat(artistPage).isNotNull();
         org.assertj.core.api.Assertions.assertThat(artistPage.getContent()).hasSize(1);
-        org.assertj.core.api.Assertions.assertThat(artistPage.getContent().get(0).getName()).isEqualTo(saved.getName());
+        org.assertj.core.api.Assertions.assertThat(artistPage.getContent().get(0).getStageName()).isEqualTo(saved.getStageName());
     }
 
 
@@ -96,7 +125,7 @@ public class ArtistControllerIT {
         Long idEsperado = artistOnDb.getId();
 
 
-        ResponseEntity<? extends Artist> response = testRestTemplate.exchange("/artists/{id}", HttpMethod.GET, null, artistOnDb.getClass(), artistOnDb.getId());
+        ResponseEntity<ArtistDTO> response = testRestTemplate.exchange("/artists/{id}", HttpMethod.GET, null, ArtistDTO.class, artistOnDb.getId());
 
         Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
         Assertions.assertEquals(idEsperado, artistOnDb.getId(), "Id is correct");
@@ -121,7 +150,7 @@ public class ArtistControllerIT {
         ArtistPutRequestBody artistPutRequestBody =
                 ArtistPutRequestBody.builder()
                 .id(savedArtist.getId())
-                .name("Tokenainamae")
+                .stageName("Tokenainamae")
                 .genre("japanese shoegaze")
                         .build();
 
@@ -131,29 +160,30 @@ public class ArtistControllerIT {
         Artist updatedArtist = artistRepository.findById(savedArtist.getId()).get();
 
         Assertions.assertAll("Verifying all fields",
-                () -> Assertions.assertEquals("Tokenainamae", updatedArtist.getName(), "Name should match"),
+                () -> Assertions.assertEquals("Tokenainamae", updatedArtist.getStageName(), "Name should match"),
                 () -> Assertions.assertEquals("japanese shoegaze", updatedArtist.getGenre(), "Genre should match"));
     }
 
         @Test
         @DisplayName("Should save an artist")
         void save_ShouldSaveAnArtist() {
-            ArtistPostRequestBody artistToBeSaved = ArtistCreator.createArtistPostRequestBody();
 
-            ResponseEntity<ArtistDTO> response = testRestTemplate.exchange("/artists/create", HttpMethod.POST, new HttpEntity<>(artistToBeSaved), ArtistDTO.class);
+            ArtistSignUpRequest artistTobeSaved = ArtistCreator.createArtistPostRequestBody();
+
+            ResponseEntity<ArtistDTO> response = testRestTemplate.exchange("/artists/create", HttpMethod.POST, new HttpEntity<>(artistTobeSaved), ArtistDTO.class);
 
             Assertions.assertEquals(HttpStatus.CREATED, response.getStatusCode());
             Assertions.assertNotNull(response.getBody());
             Assertions.assertNotNull(response.getBody().getId());
-            Assertions.assertNotNull(artistToBeSaved.getName(), response.getBody().getName());
+            Assertions.assertNotNull(artistTobeSaved.stageName(), response.getBody().getStageName());
         }
 
         @Test
-        @DisplayName("Should not save an Artist if name is blank ")
+        @DisplayName("Should not save an Artist if username is blank ")
         void shouldNotSaveArtistIfNameIsBlank() {
             ArtistPostRequestBody artistPostRequestBody = ArtistPostRequestBody.builder()
-                    .name(" ")
-                    .genre("Japenese shoegaze")
+                    .username(" ")
+                    .genre("Japanese shoegaze")
                     .build();
 
             ResponseEntity<ArtistDTO> response = testRestTemplate.exchange("/artists/create", HttpMethod.POST, new HttpEntity<>(artistPostRequestBody), ArtistDTO.class);

@@ -46,7 +46,7 @@ class ArtistControllerTest {
 
         artistController.listArtists(PageRequest.of(0, 10));
 
-        String expectedName = ArtistCreator.createValidArtist().getName();
+        String expectedName = ArtistCreator.createValidArtist().getStageName();
         org.assertj.core.api.Assertions.assertThat(artistPage).isNotEmpty();
        Assertions.assertEquals("Masayoshi takanaka", expectedName);
     }
@@ -61,7 +61,7 @@ class ArtistControllerTest {
         ResponseEntity<ArtistDTO> response = artistController.findByIdOrElseThrow(1L);
 
         org.assertj.core.api.Assertions.assertThat(response.getBody()).isNotNull();
-        org.assertj.core.api.Assertions.assertThat(response.getBody().getName()).isEqualTo(expectedArtist.getName());
+        org.assertj.core.api.Assertions.assertThat(response.getBody().getStageName()).isEqualTo(expectedArtist.getStageName());
     }
 
     @Test
@@ -87,7 +87,8 @@ class ArtistControllerTest {
 
         org.assertj.core.api.Assertions.assertThat(response).isNotNull();
         org.assertj.core.api.Assertions.assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-        org.assertj.core.api.Assertions.assertThat(response.getBody().getName()).isEqualTo(expectedResponse.getName());
+        Assertions.assertNotNull(response.getBody());
+        org.assertj.core.api.Assertions.assertThat(response.getBody().getStageName()).isEqualTo(expectedResponse.getStageName());
 
     }
 

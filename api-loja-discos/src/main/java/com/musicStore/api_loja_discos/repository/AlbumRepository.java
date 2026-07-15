@@ -10,4 +10,6 @@ public interface AlbumRepository extends JpaRepository<Album, Long> {
 
     List<Album> findByReleaseYear(Integer year);
 
+    List<Album> findByArtistId(Long artistId);
+
 }

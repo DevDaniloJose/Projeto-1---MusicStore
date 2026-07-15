@@ -39,14 +39,14 @@ class ArtistRepositoryTest {
         Artist artistSaved = this.artistRepository.save(artistToBeSaved);
         Assertions.assertThat(artistSaved).isNotNull();
         Assertions.assertThat(artistSaved.getId()).isNotNull();
-        Assertions.assertThat(artistSaved.getName()).isEqualTo(artistToBeSaved.getName());
+        Assertions.assertThat(artistSaved.getUsername()).isEqualTo(artistToBeSaved.getUsername());
     }
 
 
     private Artist createArtist() {
        return Artist.builder()
                 .genre("post-punk")
-                .name("Siouxsie and the Banshees").build();
+                .stageName("Siouxsie and the Banshees").build();
     }
 
 }

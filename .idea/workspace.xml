@@ -4,7 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4f36b56-1158-4cfb-affe-9e152dbe383f" name="Changes" comment="" />
+    <list default="true" id="d4f36b56-1158-4cfb-affe-9e152dbe383f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/requests/ArtistSignUpResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/requests/RefreshTokenRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/util/UserCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/util/UserSignUpRequestCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/controller/ArtistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/controller/ArtistController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/domain/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/mapper/ArtistMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/mapper/ArtistMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/repository/AlbumRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/repository/AlbumRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/repository/ArtistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/repository/ArtistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/requests/AlbumDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/requests/AlbumDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/requests/ArtistPostRequestBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/requests/ArtistPostRequestBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/requests/SignUpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/requests/SignUpRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/requests/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/requests/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/security/UserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/security/UserPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/service/AlbumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/service/AlbumService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/service/ArtistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/service/ArtistService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/service/RefreshTokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/service/RefreshTokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/util/AlbumCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/util/AlbumCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/util/ArtistCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/util/ArtistCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/controller/ArtistControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/controller/ArtistControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/integration/ArtistControllerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/integration/ArtistControllerIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/integration/AuthControllerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/integration/AuthControllerIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/integration/UserControllerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/integration/UserControllerIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/repository/ArtistRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/repository/ArtistRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/service/ArtistServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/service/ArtistServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/service/UserServiceTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,19 +49,20 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Exception" />
         <option value="JUnit5 Test Class" />
         <option value="Enum" />
-        <option value="Record" />
         <option value="Interface" />
         <option value="HTML File" />
+        <option value="Exception" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$USER_HOME$/.jdks/ms-21.0.9/lib/src.zip!/java.base/java/util/Date.java" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/.jdks/ms-21.0.9/lib/src.zip!/java.base/java/util/UUID.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt-api/0.13.0/jjwt-api-0.13.0.jar!/io/jsonwebtoken/JwtParser.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt-api/0.13.0/jjwt-api-0.13.0.jar!/io/jsonwebtoken/Jwts.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt-api/0.13.0/jjwt-api-0.13.0.jar!/io/jsonwebtoken/security/Keys.class" root0="SKIP_INSPECTION" />
@@ -33,6 +70,7 @@
     <setting file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/10.1.40/tomcat-embed-core-10.1.40.jar!/jakarta/servlet/http/HttpServletRequest.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/10.1.40/tomcat-embed-core-10.1.40.jar!/jakarta/servlet/http/HttpServletResponse.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/3.4.5/spring-data-commons-3.4.5.jar!/org/springframework/data/repository/CrudRepository.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/6.4.5/spring-security-core-6.4.5-sources.jar!/org/springframework/security/core/userdetails/UserDetailsService.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/6.4.5/spring-security-core-6.4.5.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/6.4.5/spring-security-core-6.4.5.jar!/org/springframework/security/core/context/SecurityContext.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/6.4.5/spring-security-core-6.4.5.jar!/org/springframework/security/core/context/SecurityContextHolder.class" root0="SKIP_INSPECTION" />
@@ -41,6 +79,9 @@
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/6.4.5/spring-security-web-6.4.5.jar!/org/springframework/security/web/authentication/WebAuthenticationDetailsSource.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/6.2.6/spring-web-6.2.6.jar!/org/springframework/web/filter/OncePerRequestFilter.class" root0="SKIP_INSPECTION" />
   </component>
+  <component name="HttpClientOnboardingState">{
+  &quot;isOnboardingCommentShown&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -49,45 +90,64 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Hehe.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MusicApiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SpringClient.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.Tesyter.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.ex3.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ex4.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ex5.executor&quot;: &quot;Run&quot;,
-    &quot;Application.testeSenai.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JUnit.ArtistControllerIT.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArtistControllerIT.list_ReturnsListOfArtistInsidePageObjet_WhenSuccessful.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArtistControllerIT.save_ShouldSaveAnArtist.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArtistControllerIT.shouldReturnAnArtist_WhenPassedId.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ArtistControllerIT.update_UpdatesAllArtistFields_WhenSuccessful.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ArtistControllerTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ArtistControllerTest.list_ReturnsListOfArtistInsidePageObjet_WhenSuccessful.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ArtistServiceTest.delete_RemovesArtist_WhenNoAlbumsExists.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArtistServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArtistServiceTest.shouldReplaceAnArtist.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArtistServiceTest.shouldSaveArtist_IfDataIsValid.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MusicApiApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/disco/api-loja-discos/api-loja-discos&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.43563217&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Hehe.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MusicApiApplication.executor": "Run",
+    "Application.SpringClient.executor": "Debug",
+    "Application.Tesyter.executor": "Debug",
+    "Application.ex3.executor": "Run",
+    "Application.ex4.executor": "Run",
+    "Application.ex5.executor": "Run",
+    "Application.testeSenai.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.ArtistControllerIT.executor": "Run",
+    "JUnit.ArtistControllerIT.list_ReturnsListOfArtistInsidePageObjet_WhenSuccessful.executor": "Run",
+    "JUnit.ArtistControllerIT.save_ShouldSaveAnArtist.executor": "Run",
+    "JUnit.ArtistControllerIT.shouldReturnAnArtist_WhenPassedId.executor": "Debug",
+    "JUnit.ArtistControllerIT.update_UpdatesAllArtistFields_WhenSuccessful.executor": "Debug",
+    "JUnit.ArtistControllerTest.executor": "Run",
+    "JUnit.ArtistControllerTest.list_ReturnsListOfArtistInsidePageObjet_WhenSuccessful.executor": "Debug",
+    "JUnit.ArtistRepositoryTest.executor": "Run",
+    "JUnit.ArtistServiceTest.delete_RemovesArtist_WhenNoAlbumsExists.executor": "Run",
+    "JUnit.ArtistServiceTest.executor": "Run",
+    "JUnit.ArtistServiceTest.shouldFindArtistById.executor": "Run",
+    "JUnit.ArtistServiceTest.shouldFindArtistBy_StageName.executor": "Run",
+    "JUnit.ArtistServiceTest.shouldReplaceAnArtist.executor": "Run",
+    "JUnit.ArtistServiceTest.shouldSaveArtist_IfDataIsValid.executor": "Run",
+    "JUnit.MusicApiApplicationTests.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Debug",
+    "JUnit.UserServiceTest.shouldThrowBadRequestExceptionIfPromoter_IsNotAdmin.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowBadRequestException_IfPromoterNotFoundByTheirUsername.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowBadRequestException_WhenUsernameAlreadyExistsInDb.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/dan/Downloads/music-store-api",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.43563217",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\disco\api-loja-discos\api-loja-discos" />
@@ -114,7 +174,7 @@
       <recent name="com.musicStore.api_loja_discos.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MusicApiApplication">
+  <component name="RunManager" selected="JUnit.UserServiceTest.shouldThrowBadRequestExceptionIfPromoter_IsNotAdmin">
     <configuration name="MusicApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.musicStore.api_loja_discos.MusicApiApplication" />
       <module name="api-loja-discos" />
@@ -128,42 +188,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ex3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exercicio.ex3" />
+    <configuration name="ArtistServiceTest.shouldFindArtistBy_StageName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api-loja-discos" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="exercicio.*" />
+          <option name="PATTERN" value="com.musicStore.api_loja_discos.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.musicStore.api_loja_discos.service" />
+      <option name="MAIN_CLASS_NAME" value="com.musicStore.api_loja_discos.service.ArtistServiceTest" />
+      <option name="METHOD_NAME" value="shouldFindArtistBy_StageName" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testeSenai" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exercicio.testeSenai" />
-      <module name="api-loja-discos" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MusicApiApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="api-loja-discos" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.musicStore.api_loja_discos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.musicStore.api_loja_discos" />
-      <option name="MAIN_CLASS_NAME" value="com.musicStore.api_loja_discos.MusicApiApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest.shouldThrowBadRequestExceptionIfPromoter_IsNotAdmin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api-loja-discos" />
       <extension name="coverage">
         <pattern>
@@ -173,27 +214,68 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.musicStore.api_loja_discos.service" />
       <option name="MAIN_CLASS_NAME" value="com.musicStore.api_loja_discos.service.UserServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="shouldThrowBadRequestExceptionIfPromoter_IsNotAdmin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.shouldThrowBadRequestException_IfPromoterNotFoundByTheirUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api-loja-discos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.musicStore.api_loja_discos.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.musicStore.api_loja_discos.service" />
+      <option name="MAIN_CLASS_NAME" value="com.musicStore.api_loja_discos.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="shouldThrowBadRequestException_IfPromoterNotFoundByTheirUsername" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.shouldThrowBadRequestException_WhenUsernameAlreadyExistsInDb" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api-loja-discos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.musicStore.api_loja_discos.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.musicStore.api_loja_discos.service" />
+      <option name="MAIN_CLASS_NAME" value="com.musicStore.api_loja_discos.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="shouldThrowBadRequestException_WhenUsernameAlreadyExistsInDb" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.MusicApiApplication" />
-      <item itemvalue="Application.ex3" />
-      <item itemvalue="Application.testeSenai" />
-      <item itemvalue="JUnit.MusicApiApplicationTests" />
-      <item itemvalue="JUnit.UserServiceTest" />
+      <item itemvalue="JUnit.ArtistServiceTest.shouldFindArtistBy_StageName" />
+      <item itemvalue="JUnit.UserServiceTest.shouldThrowBadRequestExceptionIfPromoter_IsNotAdmin" />
+      <item itemvalue="JUnit.UserServiceTest.shouldThrowBadRequestException_IfPromoterNotFoundByTheirUsername" />
+      <item itemvalue="JUnit.UserServiceTest.shouldThrowBadRequestException_WhenUsernameAlreadyExistsInDb" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserServiceTest.shouldThrowBadRequestExceptionIfPromoter_IsNotAdmin" />
+        <item itemvalue="JUnit.UserServiceTest.shouldThrowBadRequestException_IfPromoterNotFoundByTheirUsername" />
+        <item itemvalue="JUnit.UserServiceTest.shouldThrowBadRequestException_WhenUsernameAlreadyExistsInDb" />
+        <item itemvalue="JUnit.ArtistServiceTest.shouldFindArtistBy_StageName" />
         <item itemvalue="Application.MusicApiApplication" />
-        <item itemvalue="Application.ex3" />
-        <item itemvalue="Application.testeSenai" />
-        <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="JUnit.MusicApiApplicationTests" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.26222.65" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.26222.65" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -202,8 +284,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1773239176085</updated>
+      <workItem from="1782832008373" duration="3335000" />
+      <workItem from="1782838481869" duration="7222000" />
+      <workItem from="1782847773626" duration="4317000" />
+      <workItem from="1782918471127" duration="18711000" />
+      <workItem from="1783000074505" duration="2459000" />
+      <workItem from="1783002939026" duration="16492000" />
+      <workItem from="1783431289574" duration="6760000" />
+      <workItem from="1784132806883" duration="1789000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -225,10 +318,20 @@
           <line>53</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/service/ArtistService.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/api-loja-discos/src/test/java/com/musicStore/api_loja_discos/service/UserServiceTest.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/api-loja-discos/src/main/java/com/musicStore/api_loja_discos/mapper/ArtistMapper.java</url>
-          <line>20</line>
-          <properties class="com.musicStore.api_loja_discos.mapper.ArtistMapper">
+          <line>22</line>
+          <properties class="com.musicStore.api_loja_discos.mapper.ArtistMapper" method="toArtist">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -236,6 +339,15 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.Long" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/api_loja_discos$MusicApiApplication.ic" NAME="MusicApiApplication Coverage Results" MODIFIED="1774273436403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

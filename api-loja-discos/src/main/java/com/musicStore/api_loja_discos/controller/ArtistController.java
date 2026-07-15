@@ -5,6 +5,7 @@ import com.musicStore.api_loja_discos.domain.Album;
 import com.musicStore.api_loja_discos.domain.Artist;
 import com.musicStore.api_loja_discos.repository.UserRepository;
 import com.musicStore.api_loja_discos.requests.*;
+import com.musicStore.api_loja_discos.service.AlbumService;
 import com.musicStore.api_loja_discos.service.ArtistService;
 import com.musicStore.api_loja_discos.mapper.AlbumMapper;
 import com.musicStore.api_loja_discos.repository.AlbumRepository;
@@ -34,6 +35,8 @@ public class ArtistController {
     private final AlbumRepository albumRepository;
     private final AlbumMapper albumMapper;
     private final ArtistRepository artistRepository;
+    private final AlbumService albumService;
+
     @GetMapping("/list-artists")
     public ResponseEntity<Page<ArtistDTO>> listArtists(Pageable pageable) {
 
@@ -88,8 +91,8 @@ public class ArtistController {
   }
 
   @GetMapping(path = "/{id}/albums")
-  public ResponseEntity<List<Album>> seeAlbumsOfArtist(@PathVariable Long id) {
-        return ResponseEntity.ok(artistService.showAlbunsOfArtist(id));
+  public ResponseEntity<List<AlbumDTO>> seeAlbumsOfArtist(@PathVariable Long id) {
+        return ResponseEntity.ok(albumService.findByArtistId(id));
   }
 
 

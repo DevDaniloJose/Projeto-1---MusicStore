@@ -1,6 +1,9 @@
 package com.musicStore.api_loja_discos.integration;
 
+import com.github.dockerjava.api.exception.UnauthorizedException;
+import com.musicStore.api_loja_discos.Enum.Role;
 import com.musicStore.api_loja_discos.domain.Artist;
+import com.musicStore.api_loja_discos.domain.RefreshToken;
 import com.musicStore.api_loja_discos.domain.User;
 import com.musicStore.api_loja_discos.repository.ArtistRepository;
 import com.musicStore.api_loja_discos.repository.RefreshTokenRepository;
@@ -8,9 +11,8 @@ import com.musicStore.api_loja_discos.repository.UserRepository;
 import com.musicStore.api_loja_discos.requests.ArtistDTO;
 import com.musicStore.api_loja_discos.requests.AuthRequest;
 import com.musicStore.api_loja_discos.requests.AuthResponse;
+import com.musicStore.api_loja_discos.requests.RefreshTokenRequest;
 import com.musicStore.api_loja_discos.util.ArtistCreator;
-import io.jsonwebtoken.lang.Assert;
-import org.assertj.core.api.Assertions;
 import org.hibernate.mapping.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -24,6 +26,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.Random;
+import java.util.UUID;
+
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -71,13 +78,13 @@ public class AuthControllerIT {
         userRepository.save(User.builder()
                 .username(USERNAME)
                 .password(passwordEncoder.encode(PASSWORD))
-                .role("USER")
+                .role(Role.ADMIN)
                 .build());
 
         userRepository.save(User.builder()
                 .username(ADMIN_USERNAME)
                 .password(passwordEncoder.encode(PASSWORD))
-                .role("ADMIN")
+                .role(Role.ADMIN)
                 .build());
     }
 
@@ -194,6 +201,47 @@ public class AuthControllerIT {
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 
+    }
+
+    @Test
+    @DisplayName("should throw bad request when RefreshToken exists in db and expiration date is over")
+    void shouldThrowBadRequest_WhenRefreshTokenExistsInDB_andExpirationIsOver() {
+        AuthRequest loginRequest = new AuthRequest(USERNAME, PASSWORD);
+
+        AuthResponse loginResponse = testRestTemplate.postForEntity("auth/login", loginRequest, AuthResponse.class).getBody();
+
+        assertThat(loginResponse).isNotNull();
+
+        String token = loginResponse.refreshToken().getToken();
+
+        RefreshToken tokenFromDb =  refreshTokenRepository.findByToken(token).orElseThrow(() -> new UnauthorizedException("Refresh Token not valid"));
+
+        RefreshTokenRequest refreshRequest = new RefreshTokenRequest(token);
+        tokenFromDb.setExpiryDate(Instant.now().minus(1, ChronoUnit.DAYS));
+
+    refreshTokenRepository.save(tokenFromDb);
+
+
+        ResponseEntity<String> response = testRestTemplate.postForEntity("/auth/refresh", refreshRequest, String.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        assertThat(response.getBody()).contains("Refresh token expired. Please log in again");
+       boolean stillExistsInDb = refreshTokenRepository.findByToken(token).isPresent();
+        assertThat(stillExistsInDb).isFalse();
+    }
+
+    @Test
+    @DisplayName("should throw bad request exception when refreshToken doesn't exist in db")
+    void throwBadException_WhenRefreshTokenDoesnt_ExistInDb() {
+        String token = UUID.randomUUID().toString();
+
+        RefreshTokenRequest refreshToken = new RefreshTokenRequest(token);
+
+
+        ResponseEntity<String> response = testRestTemplate.postForEntity("/auth/refresh", refreshToken, String.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        assertThat(response.getBody()).contains("Invalid Refresh token");
     }
 
 

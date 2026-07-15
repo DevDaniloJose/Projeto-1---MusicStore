@@ -1,5 +1,6 @@
 package com.musicStore.api_loja_discos.repository;
 
+import com.musicStore.api_loja_discos.Enum.ProductType;
 import com.musicStore.api_loja_discos.domain.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -7,12 +8,12 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
-    List<Product> findByType(Product product);
+    List<Product> findByType(ProductType productType);
 
     List<Product> findByArtistId(Long artistId);
 
-    List<Product> findByNameContianingIgnoreCase(String name);
+    List<Product> findByNameContainingIgnoreCase(String name);
 
-    List<Product> findByStockGreatherThan(int value);
+    List<Product> findByStockGreaterThan(int value);
 
 }

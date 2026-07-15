@@ -7,15 +7,16 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ArtistRepository extends JpaRepository<Artist, Long> {
 
-    List<ArtistDTO> findByGenreIgnoreCase(String genre);
+    List<Artist> findByGenreIgnoreCase(String genre);
 
 // @Query("SELECT DISTINCT a FROM Artist a LEFT JOIN a.albums al " +
 //         "WHERE (:year IS NULL OR al.releaseYear = :year) " +
 //         "AND (:duration IS NULL OR al.durationMinutes = :duration)")
 // List<ArtistDTO> findByFilters(@Param("year") Integer year, @Param("duration") Integer duration);
 
-    List<ArtistDTO> findByStageNameContainingIgnoreCase(String stageName);
+    Optional<List<Artist>> findByStageNameContainingIgnoreCase(String stageName);
 }

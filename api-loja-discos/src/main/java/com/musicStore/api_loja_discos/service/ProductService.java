@@ -35,6 +35,6 @@ public class ProductService {
 
 
     public List<Product> findAvailableProducts() {
-        return productRepository.findByStockGreatherThan(0);
+        return productRepository.findByStockGreaterThan(0);
     }
 }

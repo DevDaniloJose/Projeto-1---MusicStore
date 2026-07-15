@@ -2,21 +2,25 @@ package com.musicStore.api_loja_discos.service;
 
 import com.musicStore.api_loja_discos.domain.Album;
 import com.musicStore.api_loja_discos.domain.Artist;
+import com.musicStore.api_loja_discos.exceptions.BadRequestException;
 import com.musicStore.api_loja_discos.exceptions.BusinessRuleException;
+import com.musicStore.api_loja_discos.exceptions.ResourceNotFoundException;
 import com.musicStore.api_loja_discos.mapper.ArtistMapper;
-import com.musicStore.api_loja_discos.mapper.ArtistMapperImpl;
 import com.musicStore.api_loja_discos.repository.ArtistRepository;
 import com.musicStore.api_loja_discos.requests.ArtistDTO;
 import com.musicStore.api_loja_discos.requests.ArtistPostRequestBody;
 import com.musicStore.api_loja_discos.requests.ArtistPutRequestBody;
 import com.musicStore.api_loja_discos.requests.ArtistSignUpRequest;
 import com.musicStore.api_loja_discos.util.ArtistCreator;
+import org.assertj.core.api.InstanceOfAssertFactories;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.stubbing.OngoingStubbing;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,7 +35,7 @@ class ArtistServiceTest {
     private ArtistRepository artistRepository;
 
     @Mock
-    private ArtistMapper artistMapper = new ArtistMapperImpl();
+    private ArtistMapper artistMapper;
 
     @InjectMocks
     private ArtistService artistService;
@@ -51,10 +55,10 @@ class ArtistServiceTest {
 
         // ACT
 
-        ArtistDTO result = artistService.save(artistPR);
+        ArtistDTO result = artistService.save(artistPostRequestBody);
 
         assertNotNull(result);
-        assertEquals("Masayoshi takanaka", result.getName());
+        assertEquals("Masayoshi Takanaka", result.getStageName());
         verify(artistRepository, times(1)).save(artist);
     }
 
@@ -110,6 +114,52 @@ class ArtistServiceTest {
         // Verify
         verify(artistRepository, times(1)).save(any(Artist.class));
         verify(artistRepository, times(1)).findById(id);
+    }
+
+    @Test
+    @DisplayName("should find an artist by their stage name")
+    void shouldFindArtistBy_StageName() {
+        Artist artist = ArtistCreator.createValidArtist();
+        List<Artist> validArtistList = ArtistCreator.createValidArtistList();
+        List<ArtistDTO> validArtistDTO = ArtistCreator.createValidArtistDTOList();
+
+        when(artistRepository.findByStageNameContainingIgnoreCase(artist.getStageName())).thenReturn(Optional.of(validArtistList));
+        when(artistMapper.toArtistDTOList(validArtistList)).thenReturn(validArtistDTO);
+        List<ArtistDTO> artistsWithSameName = artistService.findByStageName(artist.getStageName());
+
+        org.assertj.core.api.Assertions.assertThat(artistsWithSameName.getFirst().getStageName()).isEqualTo(validArtistDTO.getFirst().getStageName());
+    }
+
+    @Test
+    @DisplayName("should throw ResourceNotFoundException if no artists found by stage name")
+    void shouldThrowResourceNotFoundException_IfNoArtistFound() {
+        String unknownName = "unknown";
+        when(artistRepository.findByStageNameContainingIgnoreCase(unknownName)).thenReturn(Optional.empty());
+        ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () -> artistService.findByStageName(unknownName));
+        org.assertj.core.api.Assertions.assertThat(exception.getMessage())
+                .isEqualTo("no Artist found in db with that name");
+    }
+
+    @Test
+    @DisplayName("should find an artist by their id")
+    void shouldFindArtistById() {
+        Artist artistOnDb = ArtistCreator.createValidArtist();
+        ArtistDTO artistDTO = ArtistCreator.createValidArtistDTO();
+        when(artistRepository.findById(artistOnDb.getId())).thenReturn(Optional.of(artistOnDb));
+        when(artistMapper.toArtistDTO(artistOnDb)).thenReturn(artistDTO);
+        ArtistDTO artistFound = artistService.findArtistById(artistOnDb.getId());
+
+        org.assertj.core.api.Assertions.assertThat(Optional.of(artistFound)).isPresent();
+        org.assertj.core.api.Assertions.assertThat(artistFound.getId()).isEqualTo(artistOnDb.getId());
+    }
+
+    @Test
+    @DisplayName("Should throw resourceNotFoundException if not found by id")
+    void shouldThrowResourceNotFoundException_IfNotFoundById() {
+        Artist artistNoId = ArtistCreator.createValidArtistNoId();
+        when(artistRepository.findById(artistNoId.getId())).thenReturn(Optional.empty());
+
+            assertThrows(BadRequestException.class, () -> artistService.findArtistById(artistNoId.getId()));
     }
 
 

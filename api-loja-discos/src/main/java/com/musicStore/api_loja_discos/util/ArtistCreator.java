@@ -6,11 +6,14 @@ import com.musicStore.api_loja_discos.requests.ArtistPostRequestBody;
 import com.musicStore.api_loja_discos.requests.ArtistPutRequestBody;
 import com.musicStore.api_loja_discos.requests.ArtistSignUpRequest;
 
+import java.util.Collections;
+import java.util.List;
+
 public class ArtistCreator {
 
     public static Artist createArtistToBeSaved() {
         return Artist.builder()
-                .stageName("Masayoshi takanaka")
+                .stageName("Masayoshi Takanaka")
                 .genre("Japanese jazz")
                 .build();
     }
@@ -60,7 +63,7 @@ public class ArtistCreator {
     public static Artist createValidArtist() {
         return Artist.builder()
                 .id(1L)
-                .stageName("Masayoshi takanaka")
+                .stageName("Masayoshi Takanaka")
                 .genre("Japanese jazz")
                 .build();
     }
@@ -68,7 +71,7 @@ public class ArtistCreator {
 
     public static Artist createValidArtistNoId() {
         return Artist.builder()
-                .stageName("Masayoshi takanaka")
+                .stageName("Masayoshi Takanaka")
                 .genre("Japanese jazz")
                 .build();
     }
@@ -78,6 +81,24 @@ public class ArtistCreator {
                 .stageName("Masayoshi Takanaka")
                 .genre("Japanese jazz")
                 .build();
+    }
+
+    public static List<ArtistDTO> createValidArtistDTOList() {
+        return Collections.singletonList(ArtistDTO.builder()
+                .username("Masayoshi").genre("Japanese jazz")
+                .stageName("Masayoshi Takanaka")
+                .bio("really nice man")
+                .country("Japan")
+                .build());
+    }
+
+    public static List<Artist> createValidArtistList() {
+        return Collections.singletonList(Artist.builder()
+                .username("Masayoshi").genre("Japanese jazz")
+                .stageName("Masayoshi Takanaka")
+                .bio("really nice man")
+                .country("Japan")
+                .build());
     }
 
 }

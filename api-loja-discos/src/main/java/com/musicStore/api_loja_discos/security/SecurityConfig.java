@@ -44,9 +44,9 @@ public class SecurityConfig {
                   auth.requestMatchers("/auth/**").permitAll();
                   auth.requestMatchers("/artists/list-artists").permitAll();
                   auth.requestMatchers("/artists/{id}/albums").permitAll();
-                  auth.requestMatchers("/users/favorites/{userId}/{albumId}").permitAll();
-                  auth.requestMatchers("/users/showFavoriteAlbums/{userId}").permitAll();
-                  auth.requestMatchers("/users/showUserInfo/{id}").permitAll();
+                  auth.requestMatchers("/users/favorites/{albumId}").permitAll();
+                  auth.requestMatchers("/users/showFavoriteAlbums/").permitAll();
+                  auth.requestMatchers("/users/showUserInfo/").permitAll();
                   auth.requestMatchers("/users/showMyInfoRoute/{userId}").permitAll();
                   auth.requestMatchers("/auth/login").permitAll();
                   auth.requestMatchers("/users/signup/artist").permitAll();
@@ -65,7 +65,7 @@ public class SecurityConfig {
 
           response.setContentType("application/json");
           response.getWriter().write("""
-                            {"error": "Access denied. You need to be an admin to access this resource."}
+                            {"error": "Authentication credentials were not provided or are invalid."}
                         """);
         })
                       .accessDeniedHandler((request, response, accessDeniedException) -> {

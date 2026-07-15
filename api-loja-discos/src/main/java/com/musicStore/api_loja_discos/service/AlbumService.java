@@ -6,6 +6,7 @@ import com.musicStore.api_loja_discos.exceptions.BadRequestException;
 import com.musicStore.api_loja_discos.exceptions.InvalidReleaseYearException;
 import com.musicStore.api_loja_discos.mapper.ArtistMapper;
 import com.musicStore.api_loja_discos.repository.AlbumRepository;
+import com.musicStore.api_loja_discos.repository.ArtistRepository;
 import com.musicStore.api_loja_discos.requests.AlbumDTO;
 import com.musicStore.api_loja_discos.requests.ArtistDTO;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +26,7 @@ public class AlbumService {
         private final ArtistMapper artistMapper;
 
    private final AlbumRepository albumRepository;
+    private final ArtistRepository artistRepository;
 
     public List<AlbumDTO> listAlbums() {
        return albumRepository.findAll().stream().map(albumMapper::toAlbumDTO).toList();
@@ -46,20 +48,29 @@ public class AlbumService {
   }
 
   public AlbumDTO replace(AlbumDTO albumDTO) {
-      ArtistDTO artist = artistService.findArtistById(albumDTO.getArtist().getId());
+      Artist artistDb = artistRepository.findById(albumDTO.getArtist().getId()).orElseThrow(() -> new BadRequestException("Artist not found"));
       Album albumDb = albumRepository.findById(albumDTO.getId()).orElseThrow(() -> new BadRequestException("Album not found"));
 
       albumDb.setTitle(albumDTO.getTitle());
       albumDb.setReleaseYear(albumDTO.getReleaseYear());
       albumDb.setDurationMinutes(albumDTO.getDurationMinutes());
 
-      Artist newArtist = artistMapper.toArtist(artist);
-      albumDb.setArtist(newArtist);
+      albumDb.setArtist(artistDb);
 
 
       AlbumDTO album = albumMapper.toAlbumDTO(albumDb);
       Album albumDto = albumRepository.save(albumDb);
       return albumMapper.toAlbumDTO(albumDto);
+  }
+
+  public List<AlbumDTO> findByArtistId(Long id) {
+      List<AlbumDTO> album = albumRepository.findByArtistId(id).stream().map(albumMapper::toAlbumDTO).toList();
+
+      if (album.isEmpty()) {
+          throw new BadRequestException("No albums found for this artist.");
+      }
+
+      return album;
   }
 
   public void delete(Long id) {
